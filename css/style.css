@@ -158,8 +158,8 @@ body {
   background-image: url('./assets/desenvolvimento.png');
 }
 
-.card-visual.portfolio::before {
-  background-image: url('./assets/portfolio.png');
+.card-visual.manual::before {
+  background-image: url('./assets/acessoManual.png');
 }
 
 .card-visual.copa::before {
@@ -428,7 +428,7 @@ body {
   background: linear-gradient(135deg, #0d1a10 0%, #0f2214 100%);
 }
 
-.visual-portfolio {
+.visual-manual {
   background: linear-gradient(135deg, #1a1020 0%, #200d2a 100%);
 }
 
