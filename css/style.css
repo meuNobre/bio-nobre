@@ -27,7 +27,17 @@
   --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
-html { font-size: 16px; }
+html {
+  font-size: 16px;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* Edge antigo */
+}
+
+/* Esconde a barra de rolagem sem travar a rolagem */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
 
 body {
   background-color: var(--bg);
