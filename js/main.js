@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect  = card.getBoundingClientRect();
       const x     = e.clientX - rect.left;
       const y     = e.clientY - rect.top;
-      const color = card.dataset.glow || 'rgba(79,142,247,0.06)';
+      const color = card.dataset.glow || 'rgba(139,108,255,0.06)';
 
       card.style.background = `
         radial-gradient(200px circle at ${x}px ${y}px, ${color}, transparent 70%),

@@ -8,17 +8,23 @@
 }
 
 :root {
-  --bg:           #111113;
-  --bg-surface:   #18181c;
+  --bg:           #0E0E12;
+  --bg-surface:   #17171D;
   --border:       rgba(255,255,255,0.07);
   --border-hover: rgba(255,255,255,0.14);
 
-  --text-primary:   #f0ede8;
+  --text-primary:   #F2EFEA;
   --text-secondary: rgba(240,237,232,0.55);
   --text-muted:     rgba(240,237,232,0.30);
+  --text-support:   #9A98A6;
 
-  --accent:         #4f8ef7;
-  --accent-dim:     rgba(79,142,247,0.15);
+  --purple:       #8B6CFF;
+  --purple-light: #A58CFF;
+  --purple-dim:   rgba(139,108,255,0.15);
+
+  --orange:       #FF7A2F;
+  --orange-light: #FF9557;
+  --orange-dim:   rgba(255,122,47,0.15);
 
   --radius-card: 18px;
   --radius-sm:   10px;
@@ -42,8 +48,8 @@ body::-webkit-scrollbar {
 body {
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(79,142,247,0.04) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(120,80,200,0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(139,108,255,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255,122,47,0.04) 0%, transparent 60%);
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
@@ -246,7 +252,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 3;
-  background-image: radial-gradient(circle, rgba(79,142,247,0.18) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(139,108,255,0.18) 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.6) 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.6) 70%, transparent 100%);
@@ -257,7 +263,7 @@ body {
   position: absolute;
   top: 0; right: 0;
   width: 180px; height: 180px;
-  background: radial-gradient(circle at top right, rgba(79,142,247,0.15) 0%, transparent 65%);
+  background: radial-gradient(circle at top right, rgba(139,108,255,0.15) 0%, transparent 65%);
   border-radius: 0 var(--radius-card) 0 0;
   z-index: 0;
 }
@@ -267,9 +273,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--accent-dim);
-  border: 1px solid rgba(79,142,247,0.25);
-  color: #7cb4ff;
+  background: var(--orange-dim);
+  border: 1px solid rgba(255,122,47,0.25);
+  color: var(--orange);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1.2px;
@@ -284,7 +290,7 @@ body {
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: #4f8ef7;
+  background: var(--orange);
 }
 
 .hero-title {
@@ -299,7 +305,7 @@ body {
 .hero-subtitle {
   font-size: 13px;
   font-weight: 400;
-  color: var(--accent);
+  color: var(--purple);
   margin-bottom: 14px;
   font-style: italic;
   opacity: 0.9;
@@ -392,10 +398,16 @@ body {
 }
 
 .cta-primary {
-  background: var(--accent);
-  color: #fff;
+  background: var(--purple);
+  color: #0E0E12;
 }
-.cta-primary:hover { background: #6ba3ff; }
+.cta-primary:hover { background: var(--purple-light); }
+
+.cta-action {
+  background: var(--orange);
+  color: #0E0E12;
+}
+.cta-action:hover { background: var(--orange-light); }
 
 .cta-ghost {
   background: transparent;
@@ -424,7 +436,7 @@ body {
   position: absolute;
   bottom: -20px; right: -20px;
   width: 120px; height: 120px;
-  border: 2px solid rgba(79,142,247,0.2);
+  border: 2px solid rgba(255,122,47,0.2);
   border-radius: 50%;
 }
 .visual-robotics::before {
@@ -432,7 +444,7 @@ body {
   position: absolute;
   bottom: 10px; right: 10px;
   width: 60px; height: 60px;
-  border: 1.5px solid rgba(79,142,247,0.3);
+  border: 1.5px solid rgba(255,122,47,0.3);
   border-radius: 50%;
 }
 
@@ -459,12 +471,9 @@ body {
 /* ─────────────────────────────────────────
    ACENTOS COLORIDOS POR CATEGORIA
 ───────────────────────────────────────── */
-.accent-blue  { color: #4f8ef7; }
-.accent-green { color: #3ecf75; }
-.accent-purple{ color: #a78bfa; }
-.accent-amber { color: #f59e0b; }
-.accent-teal  { color: #2dd4bf; }
-.accent-pink  { color: #ec4899; }
+.accent-identity { color: var(--purple-light); }
+.accent-action   { color: var(--orange); }
+.accent-neutral  { color: var(--text-support); }
 
 /* Linha de acento no topo do card */
 .card::after {
@@ -479,12 +488,9 @@ body {
 }
 .card:hover::after { opacity: 1; }
 
-.card[data-accent="blue"]   { --card-accent-line: linear-gradient(90deg, transparent, rgba(79,142,247,0.6), transparent); }
-.card[data-accent="green"]  { --card-accent-line: linear-gradient(90deg, transparent, rgba(62,207,117,0.6), transparent); }
-.card[data-accent="purple"] { --card-accent-line: linear-gradient(90deg, transparent, rgba(167,139,250,0.6), transparent); }
-.card[data-accent="amber"]  { --card-accent-line: linear-gradient(90deg, transparent, rgba(245,158,11,0.6), transparent); }
-.card[data-accent="teal"]   { --card-accent-line: linear-gradient(90deg, transparent, rgba(45,212,191,0.6), transparent); }
-.card[data-accent="pink"]   { --card-accent-line: linear-gradient(90deg, transparent, rgba(236,72,153,0.6), transparent); }
+.card[data-accent="identity"] { --card-accent-line: linear-gradient(90deg, transparent, rgba(139,108,255,0.6), transparent); }
+.card[data-accent="action"]   { --card-accent-line: linear-gradient(90deg, transparent, rgba(255,122,47,0.6), transparent); }
+.card[data-accent="neutral"]  { --card-accent-line: linear-gradient(90deg, transparent, rgba(154,152,166,0.6), transparent); }
 
 /* ─────────────────────────────────────────
    FOOTER
