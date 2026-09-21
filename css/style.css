@@ -508,44 +508,28 @@ body {
   .card-sm .card-desc { display: none; }
 }
 
-/* Celular: hero em cima, cards em grade 2x2 embaixo */
-@media (max-width: 680px) {
-  body { padding: 12px; }
+/* Celular (ou tela muito baixa): cards empilhados e rolagem liberada */
+@media (max-width: 680px), (max-height: 460px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 32px 20px;
+  }
   .hub-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr));
+    flex: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
     max-height: none;
   }
   .card-hero {
-    grid-row: auto;
-    grid-column: span 2;
+    grid-row: span 1;
+    min-height: 320px;
   }
+  .card-sm { min-height: 148px; }
+  .card-sm .card-desc { display: block; }
+  .card-sm .card-footer { display: flex; }
   .hero-title { font-size: 24px; }
-  .hero-tag { margin-bottom: 10px; }
-  .hero-subtitle { margin-bottom: 8px; }
-  .hero-desc {
-    font-size: 13px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .card-sm { padding: 14px; }
-  .card-sm .card-content { justify-content: flex-end; }
-  .card-title { font-size: 15px; }
-  .card-sm .card-desc,
-  .card-sm .card-footer { display: none; }
-}
-@media (max-width: 680px) and (max-height: 640px) {
-  .hero-desc { display: none; }
-}
-
-/* Telas muito baixas (celular deitado): libera a rolagem pra nada ficar cortado */
-@media (max-height: 460px) {
-  body { height: auto; min-height: 100vh; overflow: auto; }
-  .hub-grid { flex: none; grid-template-rows: none; max-height: none; }
-  .card-hero { min-height: 320px; }
 }
 
 /* ─────────────────────────────────────────
