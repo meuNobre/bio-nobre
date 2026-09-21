@@ -22,9 +22,9 @@
   --purple-light: #A58CFF;
   --purple-dim:   rgba(139,108,255,0.15);
 
-  --orange:       #FF7A2F;
-  --orange-light: #FF9557;
-  --orange-dim:   rgba(255,122,47,0.15);
+  --orange:       #E8935E;
+  --orange-light: #F0AC80;
+  --orange-dim:   rgba(232,147,94,0.15);
 
   --radius-card: 18px;
   --radius-sm:   10px;
@@ -49,7 +49,7 @@ body {
   background-color: var(--bg);
   background-image:
     radial-gradient(ellipse 80% 50% at 20% 10%, rgba(139,108,255,0.04) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255,122,47,0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(232,147,94,0.04) 0%, transparent 60%);
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
@@ -274,7 +274,7 @@ body {
   align-items: center;
   gap: 6px;
   background: var(--orange-dim);
-  border: 1px solid rgba(255,122,47,0.25);
+  border: 1px solid rgba(232,147,94,0.25);
   color: var(--orange);
   font-size: 11px;
   font-weight: 600;
@@ -436,7 +436,7 @@ body {
   position: absolute;
   bottom: -20px; right: -20px;
   width: 120px; height: 120px;
-  border: 2px solid rgba(255,122,47,0.2);
+  border: 2px solid rgba(232,147,94,0.2);
   border-radius: 50%;
 }
 .visual-robotics::before {
@@ -444,7 +444,7 @@ body {
   position: absolute;
   bottom: 10px; right: 10px;
   width: 60px; height: 60px;
-  border: 1.5px solid rgba(255,122,47,0.3);
+  border: 1.5px solid rgba(232,147,94,0.3);
   border-radius: 50%;
 }
 
@@ -489,7 +489,7 @@ body {
 .card:hover::after { opacity: 1; }
 
 .card[data-accent="identity"] { --card-accent-line: linear-gradient(90deg, transparent, rgba(139,108,255,0.6), transparent); }
-.card[data-accent="action"]   { --card-accent-line: linear-gradient(90deg, transparent, rgba(255,122,47,0.6), transparent); }
+.card[data-accent="action"]   { --card-accent-line: linear-gradient(90deg, transparent, rgba(232,147,94,0.6), transparent); }
 .card[data-accent="neutral"]  { --card-accent-line: linear-gradient(90deg, transparent, rgba(154,152,166,0.6), transparent); }
 
 /* ─────────────────────────────────────────
